@@ -7,6 +7,9 @@
           <h2 class="card-title font-weight-bold">{{$blog->title}}</h2>
           <p class="text-muted">last updated on <strong>{{$blog->updated_at}} </strong>by <strong>
             <span class="text-primary">{{$blog->user->name}}</span></strong></p>
+            @can('update', $blog  )
+            <a href="{{route('blog.edit',['blog'=>$blog])}}"><button class="btn btn-outline-info btn-block">Edit Post</button></a>
+            @endcan
           <div class="card-body p-0">
             <p class="card-text">{{$blog->body}}</p>
           </div>

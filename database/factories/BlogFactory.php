@@ -9,7 +9,7 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(),
         'body' => $faker->paragraph(),
-        'shared_times' => 0,
+        'shared_times' => 10,
         'user_id' => factory(\App\User::class)->create()
     ];
 });

@@ -21,7 +21,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::orderBy('updated_at', 'desc')->paginate(6);
+        $blogs = Blog::orderBy('created_at')->paginate(30);
         foreach ($blogs as $blog) {
             $blog->summary = Str::limit($blog->body, 200, $end = '...');
         }
@@ -133,6 +133,18 @@ class BlogController extends Controller
         return redirect('/blog');
     }
 
+    public function blogFinder()
+    {
+        $ipt = request()->finder;
+
+
+        $blogs = Blog::orderBy('created_at', 'desc')
+            ->where('title', 'like', '%' . $ipt . '%')
+            ->orWhere('body', 'like', '%' . $ipt . '%')
+            ->paginate(50);
+
+        return view('blog.blog-finder')->with(['blogs' => $blogs]);
+    }
 
     public function validateRequest()
     {

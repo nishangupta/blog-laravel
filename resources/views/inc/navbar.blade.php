@@ -17,6 +17,15 @@
                 <a class="nav-link" href="{{route('blog.index')}}">Posts</a>
               </li>
           </ul>
+          
+          <div class="navbar-center">
+              <form action="{{route('blogFinder')}}" method="GET">
+                <div class="form-inline">
+                    <input type="text" class="form-control" placeholder="Search Blogs.." name="finder"> 
+                    <button type="submit" class="btn btn-primary mx-4">Search</button>
+                </div>
+              </form>
+          </div>
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">

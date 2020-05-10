@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Comment;
-use App\Notifications\BlogComment;
-use App\User;
+use App\Events\UserCommentedOnBlog;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -123,9 +122,7 @@ class BlogController extends Controller
         $comment->user_id = auth()->user()->id;
         $comment->blog_id = $blog_id;
         if ($comment->save()) {
-            $details = auth()->user()->name;
-            $blogCreator = $comment->blog->user;
-            $blogCreator->notify(new BlogComment($details));
+            event(new UserCommentedOnBlog(auth()->user()->name, $comment));
         }
 
         return redirect('blog/' . $blog_id);

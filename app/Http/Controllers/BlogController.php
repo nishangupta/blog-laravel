@@ -136,13 +136,14 @@ class BlogController extends Controller
     public function blogFinder()
     {
         $ipt = request()->finder;
-
-
-        $blogs = Blog::orderBy('created_at', 'desc')
-            ->where('title', 'like', '%' . $ipt . '%')
-            ->orWhere('body', 'like', '%' . $ipt . '%')
-            ->paginate(50);
-
+        if ($ipt === null) {
+            $blogs = Blog::orderBy('created_at', 'desc')->paginate(100);
+        } else {
+            $blogs = Blog::orderBy('created_at', 'desc')
+                ->where('title', 'like', '%' . $ipt . '%')
+                ->orWhere('body', 'like', '%' . $ipt . '%')
+                ->paginate(50);
+        }
         return view('blog.blog-finder')->with(['blogs' => $blogs]);
     }
 

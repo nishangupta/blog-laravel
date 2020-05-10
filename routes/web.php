@@ -26,7 +26,7 @@ Route::get('/blog/{blog}/edit', 'BlogController@edit')->name('blog.edit');
 Route::put('/blog/{blog}', 'BlogController@update')->name('blog.update');
 Route::delete('/blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
 Route::post('/blog/{blog}/comment', 'BlogController@addComment')->name('blog.addComment');
-
+Route::get('/MarkAllNotificationsAsRead', 'BlogController@markAllNotificationsAsRead')->name('markAsRead');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

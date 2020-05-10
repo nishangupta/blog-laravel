@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Comment;
+use App\Notifications\BlogComment;
+use App\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->paginate(6);
+        $blogs = Blog::orderBy('updated_at', 'desc')->paginate(6);
         foreach ($blogs as $blog) {
             $blog->summary = Str::limit($blog->body, 200, $end = '...');
         }
@@ -120,8 +122,18 @@ class BlogController extends Controller
         $comment->comment = request()->comment;
         $comment->user_id = auth()->user()->id;
         $comment->blog_id = $blog_id;
-        $comment->save();
+        if ($comment->save()) {
+            $details = auth()->user()->name;
+            $blogCreator = $comment->blog->user;
+            $blogCreator->notify(new BlogComment($details));
+        }
+
         return redirect('blog/' . $blog_id);
+    }
+    public function markAllNotificationsAsRead()
+    {
+        auth()->user()->notifications->markAsRead();
+        return redirect('/blog');
     }
 
 

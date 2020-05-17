@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Blog-laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,15 +19,17 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet"> --}}
+    @stack('css')
 </head>
 <body>
     <div id="app">
         @include('inc.navbar')
-        <main class="py-4">
+        <main class="py-0">
             @yield('content')
         </main>
         @include('inc.footer')
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack('js')
 </body>
 </html>

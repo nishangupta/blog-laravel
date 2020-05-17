@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'BlogController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 //blog controller route
 Route::get('/blog', 'BlogController@index')->name('blog.index');
@@ -28,7 +28,5 @@ Route::delete('/blog/{blog}', 'BlogController@destroy')->name('blog.destroy');
 Route::post('/blog/{blog}/comment', 'BlogController@addComment')->name('blog.addComment');
 Route::get('/MarkAllNotificationsAsRead', 'BlogController@markAllNotificationsAsRead')->name('markAsRead');
 Route::get('/blog-finder', 'BlogController@blogFinder')->name('blogFinder');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');

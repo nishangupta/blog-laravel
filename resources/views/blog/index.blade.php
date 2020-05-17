@@ -1,6 +1,14 @@
 @extends('layouts.app')
 @section('content')
   <div class="container">
+    <div class="navbar-center my-4">
+      <form action="{{route('blogFinder')}}" method="GET" class="">
+        <div class="form-inline">
+            <input type="text" class="form-control" placeholder="Search Blogs.." name="finder"> 
+            <button type="submit" class="btn btn-primary mx-4">Search</button>
+        </div>
+      </form>
+  </div>
     <p class="text-primary lead">Recent Blogs</p>
     <div class="row">
         @if(count($blogs)>0)

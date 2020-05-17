@@ -17,16 +17,12 @@ body {
 }
 
 #app {
-    position: relative;
-    padding-bottom: 5rem;
-    min-height: 100vh;
+    min-height: 100vh !important;
+    overflow: auto;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    clear: both;
+    margin: 0;
     .featured-in {
         padding: 0.5rem;
         background-color: #343a40;
@@ -34,6 +30,63 @@ footer {
             width: 100px;
             height: auto;
             margin-right: 2rem;
+        }
+    }
+    .main-footer {
+        background-color: #dee2e6;
+        font-size: 0.8rem;
+        padding: 3rem 0;
+        .footer-hdr {
+            font-weight: 800;
+            color: #343a40;
+        }
+        .footer-social-links {
+            .fab {
+                font-size: 1.2rem;
+                color: #222;
+            }
+        }
+        .footer-nav-links {
+            color: #222;
+            font-size: 0.9rem;
+            display: block;
+            width: 100%;
+            margin: 0.2rem 0;
+            text-decoration: none;
+            &:hover {
+                color: #666;
+                text-decoration: none;
+            }
+        }
+        .subscribe-to-newsletter-input {
+            padding: 0.7rem 1rem;
+            border: 1px solid #889;
+            margin: 0.2rem 0;
+            width: 100%;
+            background-color: #dee2e6;
+            outline-color: #343a40;
+            &:focus {
+                border: 1px solid #222;
+            }
+        }
+    }
+    .footer-bottom {
+        background-color: #343a40;
+        padding: 2rem;
+        .footer-btm {
+            display: flex;
+            justify-content: space-between;
+            .footer-txt {
+                color: white;
+            }
+            .payment-gateways {
+                a {
+                    padding: 3px 5px;
+                    background-color: white;
+                    color: #333;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
@@ -120,3 +173,4 @@ footer {
         color: white;
     }
 }
+

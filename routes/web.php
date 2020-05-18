@@ -30,3 +30,12 @@ Route::get('/MarkAllNotificationsAsRead', 'BlogController@markAllNotificationsAs
 Route::get('/blog-finder', 'BlogController@blogFinder')->name('blogFinder');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
+
+
+//cart
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::get('/cart/{cart}', 'CartController@show')->name('cart.show');
+Route::post('/cart/addToCart', 'CartController@addToCart')->name('cart.addToCart');
+Route::post('/cart/addToWishlist', 'CartController@addToWishlist')->name('cart.addToWishlist');
+Route::get('/carts/my-cart', 'CartController@myCart')->name('cart.myCart');
+Route::get('/carts/removeFromCart', 'CartController@removeFromCart')->name('cart.removeFromCart');

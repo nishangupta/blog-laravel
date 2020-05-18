@@ -11065,3 +11065,12 @@ footer .footer-bottom .footer-btm .payment-gateways a {
   color: white;
 }
 
+.cart-index .cart-section {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+.cart-index .cart-section .card {
+  margin-bottom: 2rem;
+}
+

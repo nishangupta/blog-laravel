@@ -20,6 +20,9 @@
                   </li> --}}
               </div>
             </li>
+            <li class="nav-item">
+                <a href="{{route('cart.index')}}" class="nav-link">Cart</a>
+            </li>
           </ul>
     
 

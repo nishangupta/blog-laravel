@@ -38,4 +38,4 @@ Route::get('/cart/{cart}', 'CartController@show')->name('cart.show');
 Route::post('/cart/addToCart', 'CartController@addToCart')->name('cart.addToCart');
 Route::post('/cart/addToWishlist', 'CartController@addToWishlist')->name('cart.addToWishlist');
 Route::get('/carts/my-cart', 'CartController@myCart')->name('cart.myCart');
-Route::get('/carts/removeFromCart', 'CartController@removeFromCart')->name('cart.removeFromCart');
+Route::get('/carts/removeFromCart ', 'CartController@removeFromCart')->name('cart.removeFromCart');

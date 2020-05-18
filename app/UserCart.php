@@ -14,4 +14,8 @@ class UserCart extends Model
     {
         return $this->belongsTo(\App\Cart::class, 'cart_product', 'id');
     }
+    public function favourites()
+    {
+        return $this->belongsTo(\App\Cart::class, 'wishlist', 'id');
+    }
 }

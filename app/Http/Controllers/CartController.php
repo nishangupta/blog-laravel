@@ -30,6 +30,7 @@ class CartController extends Controller
         return view('cart.myCart')->with('userCarts', $userCarts);
     }
 
+
     //post request through url
     public function addToCart(Request $request)
     {

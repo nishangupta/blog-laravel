@@ -4,7 +4,7 @@
     <li class="nav-item">
       <a href="{{ route('cart.myCart') }}" class="nav-link">
         <button class="btn btn-light btn-sm">
-          <span class="badge badge-danger">123</span>
+          <span class="badge badge-danger">{{ $userCartCount }}</span>
           <i class="fas fa-shopping-cart"></i>
         </button>
       </a>

@@ -7,9 +7,9 @@
       <div class="pre-checkout-cart">
         <div class="card shadow">
           <div class="card-header d-flex justify-content-between">
-            <h2 class="card-title">Shopping cart ({{count($userCarts)}} items)</h2>
+            <h2 class="card-title">Favourate Product ({{count($userWishlist)}} items)</h2>
             <div class="">
-              <a href="#" class="btn btn-primary">Checkout</a>
+              <a href="{{route('cart.myCart')}}" class="btn btn-primary">Checkout</a>
             </div>
           </div>
           <div class="card-body">
@@ -24,13 +24,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($userCarts as $item)
+                  @foreach($userWishlist as $item)
                   <tr class="cart-checkout-row">
                     <td>
                       <img src="{{asset('img/product.jpg')}}" class="table-cart-img" alt="img">
                     </td>
                     <td class="table-first-col">
-                      <p class="lead">{{$item->cart->title}}</p>
+                      <p class="lead">{{$item->favourites}}</p>
                       <a removeProduct class="text-danger">Remove</a>
                     </td>
                     <td>
@@ -40,10 +40,10 @@
                         <button class="btn btn-outline-secondary " add-cart>+</button>
                       </div>
                     </td>
-                    <td class="product_id_key d-none">{{$item->cart->id}}</td>
+                    <td class="product_id_key d-none">{{$item->favourites}}</td>
 
                     <td class="cart-row-price">
-                      ${{$item->cart->price}}
+                      {{-- ${{$item->favourites->price}} --}}
                     </td>
                   </tr>
                   @endforeach

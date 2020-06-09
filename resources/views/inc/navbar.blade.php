@@ -23,6 +23,9 @@
             <li class="nav-item">
                 <a href="{{route('cart.index')}}" class="nav-link">Cart</a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('github.index')}}" class="nav-link">Github</a>
+            </li>
           </ul>
     
 

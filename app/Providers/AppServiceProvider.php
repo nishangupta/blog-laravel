@@ -25,9 +25,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['cart.*'], function ($view) {
-            $userCarts = auth()->user()->userCarts->where('wishlist', null);
-            $userCartCount = count($userCarts);
-            $view->with('userCartCount', $userCartCount);
+            if (auth()->user()) {
+                $userCarts = auth()->user()->userCarts->where('wishlist', null);
+                $userCartCount = count($userCarts);
+                $view->with('userCartCount', $userCartCount);
+            } else {
+                $view->with('userCartCount', 0);
+            }
         });
     }
 }

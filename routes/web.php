@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
+
 
 //blog controller route
 Route::get('/blog', 'BlogController@index')->name('blog.index');
@@ -39,3 +41,13 @@ Route::post('/cart/addToCart', 'CartController@addToCart')->name('cart.addToCart
 Route::post('/cart/addToWishlist', 'CartController@addToWishlist')->name('cart.addToWishlist');
 Route::get('/carts/my-cart', 'CartController@myCart')->name('cart.myCart');
 Route::get('/carts/removeFromCart ', 'CartController@removeFromCart')->name('cart.removeFromCart');
+
+//user
+Route::get('/github', 'GithubController@index')->name('github.index');
+
+Route::get('/chat', 'HomeController@chat')->name('chat');
+
+//api route for chat application
+Route::get('/contacts', 'ContactsController@get')->name('contacts.get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor')->name('contacts.getMessageFor');
+Route::post('/conversation/send', 'ContactsController@send')->name('contacts.send');

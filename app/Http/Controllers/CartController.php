@@ -12,11 +12,13 @@ class CartController extends Controller
     {
         $this->middleware('auth', ['except' => ['index']]);
     }
+
     public function index()
     {
         $carts = Cart::latest()->paginate(4);
         return view('cart.index')->with('carts', $carts);
     }
+
     public function show(Cart $cart)
     {
         return view('cart.show')->with('cart', $cart);

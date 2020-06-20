@@ -26,6 +26,9 @@
             <li class="nav-item">
                 <a href="{{route('github.index')}}" class="nav-link">Github</a>
             </li>
+            <li class="nav-item">
+                <a href="{{ URL::to('/gallery')}}" class="nav-link">{{_('Gallery')}}</a>
+            </li>
           </ul>
     
 

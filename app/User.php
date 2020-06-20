@@ -46,4 +46,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\UserCart::class);
     }
+    public function galleries()
+    {
+        return $this->hasMany('App\Gallery');
+    }
 }

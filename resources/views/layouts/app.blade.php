@@ -24,6 +24,7 @@
 <body>
     <div id="app">
         @include('inc.navbar')
+        @include('inc.flash-message')
         <main class="py-0">
             @yield('content')
         </main>

@@ -45,9 +45,13 @@ Route::get('/carts/removeFromCart ', 'CartController@removeFromCart')->name('car
 //user
 Route::get('/github', 'GithubController@index')->name('github.index');
 
-Route::get('/chat', 'HomeController@chat')->name('chat');
 
 //api route for chat application
+Route::get('/chat', 'HomeController@chat')->name('chat');
 Route::get('/contacts', 'ContactsController@get')->name('contacts.get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor')->name('contacts.getMessageFor');
 Route::post('/conversation/send', 'ContactsController@send')->name('contacts.send');
+
+
+//route for the image gallery
+Route::resource('/gallery', 'ImageGalleryController');

@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+div {
+    padding: 0;
+    margin: 0;
+}
+
+$primary-color: #01adbb;
+$primary-hover: #007882;
+$primary-light: #e0f7f8;
+$danger-color: #d93c23;
+$primary-grey: #888;
+$std-padding: 0.25rem 0.5rem;
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+}
+.primary-btn {
+    background-color: #01adbb;
+    color: white;
+}
+
+body {
+    background-color: white;
+}
+main {
+    margin-top: 4rem;
+}

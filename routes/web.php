@@ -55,3 +55,9 @@ Route::post('/conversation/send', 'ContactsController@send')->name('contacts.sen
 
 //route for the image gallery
 Route::resource('/gallery', 'ImageGalleryController');
+
+Route::get('/real-estate', 'PropertyController@index')->name('property.index');
+Route::get('/real-estate/list', 'PropertyController@list')->name('property.list');
+Route::get('/real-estate/{property}', 'PropertyController@show')->name('property.show');
+Route::get('/account/user_profile', 'PropertyController@accountIndex')->name('property.account');
+Route::get('/account/rental_resume', 'PropertyController@accountRentalResume')->name('property.rentalResume');

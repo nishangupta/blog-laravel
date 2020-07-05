@@ -5,6 +5,7 @@
  */
 
 require("./bootstrap");
+//owl.carousel
 
 window.Vue = require("vue");
 
@@ -34,4 +35,13 @@ Vue.component("chat-app", require("./components/ChatApp.vue").default);
 
 const app = new Vue({
     el: "#app"
+});
+
+$(document).ready(function() {
+    $(".mb-nav-toggler").on("click", function() {
+        toggleMobileNav();
+    });
+    function toggleMobileNav() {
+        $(".mb-nav-list").toggleClass("active");
+    }
 });

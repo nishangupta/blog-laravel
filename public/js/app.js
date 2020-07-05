@@ -57159,7 +57159,8 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //owl.carousel
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -57182,6 +57183,15 @@ Vue.component("chat-app", __webpack_require__(/*! ./components/ChatApp.vue */ ".
 
 var app = new Vue({
   el: "#app"
+});
+$(document).ready(function () {
+  $(".mb-nav-toggler").on("click", function () {
+    toggleMobileNav();
+  });
+
+  function toggleMobileNav() {
+    $(".mb-nav-list").toggleClass("active");
+  }
 });
 
 /***/ }),

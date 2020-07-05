@@ -125,7 +125,11 @@ class ImageGalleryController extends Controller
     public function destroy($id)
     {
         $gallery = Gallery::find($id);
-        $gallery->delete();
+        if (Storage::delete('public/image-gallery/' . basename($gallery->img_url))) {
+            $gallery->delete();
+        } else {
+            return redirect()->back()->with('success', 'Gallery not deleted!');
+        }
         return redirect()->route('gallery.index')->with('success', 'Gallery was deleted successfully!');
     }
     public function requestValidate()

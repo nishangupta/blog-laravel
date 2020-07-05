@@ -29,6 +29,9 @@
             <li class="nav-item">
                 <a href="{{ URL::to('/gallery')}}" class="nav-link">{{_('Gallery')}}</a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('property.index')}}" class="nav-link">{{_('Real Estate')}}</a>
+            </li>
           </ul>
     
 

@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="col-md-6 col-sm-12">
-              <h2 class="page-header">${{$property->price}}</h2>
+              <h2 class="page-header text-info">${{$property->price}}</h2>
               <p>Est.Mortgage $4,706/mo</p>
               <div class="d-flex my-2 btn-group">
                 <button class="btn btn-sm btn-info">Get Pre-Qualified</button>
@@ -68,29 +68,32 @@
         </div> <!-- property-desc-grid row end-->
       </div>
       <hr>
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <div class="similar-properties-container">
-            <h3>Similar Homes You May Like</h3>
-            <div class="owl-carousel owl-theme">
-              @foreach($property->userCanLike as $miniProperty)
-                <div class="item">
-                  <div class="card similar-property">
-                    <img src="{{asset('img/realestate2.jpg')}}" class="img-fluid" alt="">
-                    <div class="card-body">
-                      <h3 class="page-header">${{$miniProperty->price}}</h3>
-                      <div class="d-grid mt-2">
-                        <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$miniProperty->bed}} beds</div>
-                        <div class="badge badge-secondary"><i class="fas fa-bath"></i> {{$miniProperty->bath}} baths</div>
-                        <div class="badge badge-secondary"><i class="fas fa-mountain"></i> {{$miniProperty->area}} sqft</div>
-                      </div>
-                      <h4 class="property-name page-header font-weight-bold pt-2">{{$miniProperty->name}}</h4>
-                      <p class="">{{$property->address}}</p>
+      <div class="jumbotron">
+        <div class="similar-properties-container">
+          <h3>Similar Homes You May Like</h3>
+          <br>
+          <div class="row">
+            @foreach($property->userCanLike as $miniProperty)
+            <div class="col-lg-3 col-md-6 col-sm-6 my-2">
+              <a href="{{route('property.show',['property'=>$miniProperty])}}">
+              <div class="similar-property">
+                <div class="card ">
+                  <img src="{{asset('img/realestate2.jpg')}}" class="img-fluid" alt="">
+                  <div class="card-body">
+                    <h3 class="page-header text-info">${{$miniProperty->price}}</h3>
+                    <div class="d-grid mt-2">
+                      <div class="badge badge-secondary"><i class="fas fa-bed"></i> {{$miniProperty->bed}} beds</div>
+                      <div class="badge badge-secondary"><i class="fas fa-bath"></i> {{$miniProperty->bath}} baths</div>
+                      <div class="badge badge-secondary"><i class="fas fa-mountain"></i> {{$miniProperty->area}} sqft</div>
                     </div>
+                    <h4 class="property-name page-header font-weight-bold pt-2">{{$miniProperty->name}}</h4>
+                    <p class="property-address">{{$property->address}}</p>
                   </div>
                 </div>
-              @endforeach
-           </div>
+              </div>
+            </a>
+            </div>
+            @endforeach
           </div>
         </div>
       </div>
@@ -101,45 +104,12 @@
 
 
 @push('js')
-{{-- <script src="owlcarousel/owl.carousel.min.js"></script> --}}
-{{-- <script src="/node_modules/jquery/dist/jquery.js"></script>
-<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-<script>
- $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-}) --}}
-</script>
+
 @endpush
 
 
 @push('css')
 <style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
-}
-p {
-  padding: 0;
-  margin: 0;
-}
-
 .save-share-btn {
   position: absolute;
   display: flex;
@@ -204,6 +174,12 @@ p {
 .img-gallery:hover img {
   animation: scale-up 0.4s forwards;
 }
+.property-name{
+  color:#01ADBB;
+}
+.property-address{
+  color:#007882;
+}
 @keyframes scale-up {
   0% {
     transform: scale(1);
@@ -236,17 +212,12 @@ p {
     padding: 0.5rem 0;
   }
 }
-.similar-property:hover {
+.similar-property {
+  border:2px solid #666;
+  cursor: pointer;
   box-shadow:0 0 0 20px 40px rgba(0,0,0,.2);
 }
-/* .similar-property-bx{
-  background-color: red;
-  height:25rem;
-  overflow: hidden;
-} */
 
 </style>
-{{-- <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> --}}
 @endpush
 

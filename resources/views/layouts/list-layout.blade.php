@@ -27,6 +27,5 @@
     @yield('content')
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('js')
-    @include('inc.real-estate.footer')
 </body>
 </html>

@@ -2,20 +2,24 @@
 
 @section('content')
 <div class="property-index">
-  <div class="container">
-    <div class="jumbotron">
-      <div class="page-header">
-        <h1 class="text-center display-4">Discover a place ,<br> You love to live</h1>
-      </div>
+  <div class="container-fluid">
+    <div class="hero">
       <div class="row">
-        <div class="col-md-6 col-sm-10 mx-auto">
-          <form action="{{route('property.show',['property'=>1])}}" method="GET">
-            <div class="form-group d-flex ">
-              <input type="text" placeholder="Search any property" class="form-control" name="propertyName">
-              <input type="submit" class="btn btn-warning" value="Search">
+        <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+          <div class="hero-caption">
+            <div>
+              <h2 class="caption-text">Discover a place <br> You love to live.</h2>
+              <br>
+              <form action="{{route('property.search')}}" method="GET">
+                <div class="hero-search-bx">
+                      <input type="text" placeholder="Naradevi, Kathmandu" class="navbar-search-input" autofocus>
+                      <button type="button" class="hero-search-button">
+                        <i class="fas fa-search"></i>
+                      </button>
+                </div>
+              </form>
             </div>
-            @csrf
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -29,5 +33,8 @@
 
 
 @push('css')
+<style>
+
+</style>
 @endpush
 

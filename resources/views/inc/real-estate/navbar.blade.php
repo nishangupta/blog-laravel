@@ -1,30 +1,32 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" id="navbar">
-  <a href="page.html" class="navbar-brand">
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow" id="navbar">
+  <a href="{{route('property.index')}}" class="navbar-brand">
     <!-- <img src="logo2.png" alt="">-->NepEstate</a>
   <div class="navbar-search-bx">
-    <input type="text" placeholder="Parker,Co" name="searchInput" class="navbar-search-input">
-    <button class="primary-btn"><i class="fas fa-search"></i></button>
+    <form action="{{route('property.search')}}" method="GET">
+      <input type="text" placeholder="Parker,Co" name="searchInput" class="navbar-search-input">
+      <button type="submit" class="primary-btn"><i class="fas fa-search"></i></button>
+    </form>
   </div>
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item"><a href="" class="nav-link">Buy</a></li>
-    <li class="nav-item"><a href="" class="nav-link">Rent</a></li>
-    <li class="nav-item"><a href="" class="nav-link">Mortage</a></li>
+    <li class="nav-item"><a href="{{route('property.buy')}}" class="nav-link">Buy</a></li>
+    <li class="nav-item"><a href="{{route('property.rent')}}" class="nav-link">Rent</a></li>
+    <li class="nav-item"><a href="{{route('property.mortage')}}" class="nav-link">Mortage</a></li>
   </ul>
   <ul class="navbar-nav mx-auto">
-    <li class="nav-item"><a href="" class="nav-link">Saved Homes</a></li>
-    <li class="nav-item"><a href="" class="nav-link">Rent</a></li>
+    <li class="nav-item"><a href="{{route('property.savedHomes')}}" class="nav-link">Saved Homes</a></li>
+    <li class="nav-item"><a href="{{route('property.rent')}}" class="nav-link">Rent</a></li>
   </ul>
   <ul class="navbar-nav ml-auto">
-    <button class="primary-btn">Sign up or Log in</button>
+    <a href="{{route('property.login')}}" class="primary-btn">Sign up or Log in</a>
   </ul>
   <div class="mb-nav">
     <a href="#" class="nav-link mb-nav-toggler"><i class="fas fa-bars"></i></a>
     <div class="mb-nav-list">
       <a href="#" class="mb-nav-toggler ml-auto btn btn-danger text-light">Close</a>
-      <a href="" class="mb-nav-link">Sign up or log in</a>
-      <a href="" class="mb-nav-link">Buy <i class="fas fa-angle-down"></i></a>
-      <a href="" class="mb-nav-link">Rent <i class="fas fa-angle-down"></i></a>
-      <a href="" class="mb-nav-link">Mortage <i class="fas fa-angle-down"></i></a>
+      <a href="{{route('property.login')}}" class="mb-nav-link">Sign up or log in</a>
+      <a href="{{route('property.buy')}}" class="mb-nav-link">Buy <i class="fas fa-angle-down"></i></a>
+      <a href="{{route('property.rent')}}" class="mb-nav-link">Rent <i class="fas fa-angle-down"></i></a>
+      <a href="{{route('property.mortage')}}" class="mb-nav-link">Mortage <i class="fas fa-angle-down"></i></a>
     </div>
   </div>
 </nav>

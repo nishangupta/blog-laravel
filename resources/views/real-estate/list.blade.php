@@ -1,4 +1,4 @@
-@extends('layouts.real-estate')
+@extends('layouts.list-layout')
 
 @section('content')
 <main>
@@ -58,12 +58,12 @@
           </ul>
           <p class="total-pagination">{{$properties->render()->paginator->total()}} Results</p>
         </div>
-        <div class="footer">
-          <p class="footer-text">Zillow Group is committed to ensuring digital accessibility for individuals with
+        <div class="list-footer">
+          <p class="list-footer-text">Zillow Group is committed to ensuring digital accessibility for individuals with
             disabilities. We are continuously working to improve the accessibility of our web experience for
             everyone, and we welcome feedback and accommodation requests. If you wish to report an issue or seek an
             accommodation, please <a href="#">contact us.</a></p>
-          <p class="footer-text mt-4">
+          <p class="list-footer-text mt-4">
             Copyright © 2020 Trulia, LLC. All rights reserved. Equal Housing Opportunity. Have a Question? Visit our
             Help Center to find the answer.
           </p>
@@ -98,3 +98,16 @@
   </div>
 </main>
 @endsection
+
+@push('css')
+<style>
+.list-footer {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+.list-footer-text {
+        font-size: 0.8rem;
+        color: grey;
+}
+</style>
+@endpush

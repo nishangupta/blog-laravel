@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
+    public function accountLogin()
+    {
+        return view('real-estate.login');
+    }
+
     public function index()
     {
         return view('real-estate.index');
@@ -20,7 +25,7 @@ class PropertyController extends Controller
     }
     public function show(Property $property)
     {
-        $userCanLike = Property::where('created_at', $property->created_at)->where('id', '<>', $property->id)->take(5)->get();
+        $userCanLike = Property::where('created_at', $property->created_at)->where('id', '<>', $property->id)->take(4)->get();
         $property->userCanLike = $userCanLike;
         return view('real-estate.show')->with('property', $property);
     }

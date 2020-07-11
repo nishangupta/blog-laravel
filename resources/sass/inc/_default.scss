@@ -16,7 +16,9 @@ div {
     margin: 0;
 }
 a {
+    color: black;
     &:hover {
+        color: black;
         text-decoration: none;
     }
 }
@@ -35,10 +37,26 @@ $danger-color: #d93c23;
 $primary-grey: #888;
 $std-padding: 0.25rem 0.5rem;
 
+//custom icons
+.fa-primary {
+    color: $primary-color;
+}
+.fa-secondary {
+    color: $primary-light;
+}
+
+//locals
 .primary-link {
     color: $primary-color;
     &:hover {
         color: $primary-light;
+        text-decoration: none;
+    }
+}
+.secondary-link {
+    color: $primary-hover;
+    &:hover {
+        color: $primary-hover;
         text-decoration: none;
     }
 }
@@ -63,6 +81,18 @@ button {
     transition: background, color 0.25s ease;
     padding: 6px 8px;
     border: 1px solid $primary-color;
+    border-radius: 8px;
+    &:hover {
+        background-color: white;
+        color: $primary-hover;
+    }
+}
+.secondary-btn {
+    background-color: $primary-hover;
+    color: white;
+    transition: background, color 0.25s ease;
+    padding: 6px 8px;
+    border: 1px solid $primary-hover;
     border-radius: 8px;
     &:hover {
         background-color: white;

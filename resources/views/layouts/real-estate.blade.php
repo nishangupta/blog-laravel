@@ -25,8 +25,8 @@
     @include('inc.real-estate.navbar')
     @include('inc.flash-message')
     @yield('content')
+    @include('inc.real-estate.footer')
     <script src="{{ asset('js/app.js') }}"></script>
     @stack('js')
-    @include('inc.real-estate.footer')
 </body>
 </html>

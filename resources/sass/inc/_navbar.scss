@@ -40,13 +40,14 @@
         border-bottom-left-radius: 0;
     }
 }
+//mobile responsive navbar
 .mb-nav {
     display: none;
     .mb-nav-toggler {
         color: #333;
     }
     .mb-nav-list {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         height: 100vh;
@@ -56,7 +57,7 @@
         flex-direction: column;
         width: 20rem;
         padding: 2rem;
-        z-index: 10000;
+        z-index: 9999;
         animation: navbar-animation 0.5s ease forwards;
         @keyframes navbar-animation {
             0% {
@@ -99,6 +100,9 @@
     }
     #navbar {
         .navbar-nav {
+            display: none;
+        }
+        .navbar-search-bx {
             display: none;
         }
     }
